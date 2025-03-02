@@ -1,0 +1,12 @@
+
+# DONT CONFIRM ON CLOSE
+
+confirm_close no
+
+# BEGIN_KITTY_THEME
+# Rosé Pine Moon
+include current-theme.conf
+# END_KITTY_THEME
+window_margin_width 4
+window_margin_height 4
+background_opacity 0.8

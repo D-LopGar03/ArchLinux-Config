@@ -1,0 +1,117 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 0,
+    "margin-left": 60,
+    "margin-right": 60,
+    "modules-left": [
+        "custom/launcher",
+        "memory",
+        "cpu"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "pulseaudio",
+        "battery",
+        "clock"
+    ],
+    "custom/launcher": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "/home/ay4t0/.config/scripts/./rofi.sh"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "<span color='#6fa8dc'></span>",
+            "2": "<span color='#6fa8dc'></span>",
+            "3": "<span color='#6fa8dc'></span>",
+            "4": "<span color='#6fa8dc'></span>",
+            "5": "<span color='#6fa8dc'></span>",
+            "6": "<span color='#6fa8dc'></span>",
+            "7": "<span color='#6fa8dc'></span>",
+            "8": "<span color='#6fa8dc'></span>",
+            "9": "<span color='#6fa8dc'></span>",
+            "10": "<span color='#6fa8dc'></span>",
+            "active": "<span color='#f1c232'>󰮯 </span>"
+        },
+        "sort-by-number": true
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "<span color='#ffeb3b'> </span> <span color='#ffeb3b'>{capacity}%</span>",
+        "format-plugged": " <span color='#ff8000'>{capacity}</span>%",
+        "format-alt": "<span color='#f1f1f1'>{time}</span> {icon}",
+        "format-icons": [
+            "<span color='#f7768e'> </span>",
+            "<span color='#e0af68'> </span>",
+            "<span color='#e0af68'> </span>",
+            "<span color='#9ece6a'> </span>",
+            "<span color='#9ece6a'> </span>"
+        ]
+    },
+    "clock": {
+        "tooltip": true,
+        "interval": 60,
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%Y-%m-%d}"
+    },
+    "pulseaudio": {
+        "format": "{icon}   {volume}% ",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "󰂭 ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "  ",
+                "  ",
+                "  "
+            ]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "network": {
+        "format-wifi": "{icon}    {ipaddr}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰤫",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-icons": {
+            "default": [
+                "<span color='#fe3702'>󰤟 </span>",
+                "<span color='#feaa02'>󰤢 </span>",
+                "<span color='#93fe02'>󰤥 </span>",
+                "<span color='#23ff00'>󰤨 </span>"
+            ]
+        }
+    },
+    "memory": {
+        "interval": 1,
+        "format": "    {used} GiB  ",
+        "max-length": 30
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "    {usage}%",
+        "max-length": 30
+    }
+}
