@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-wallpaper_dir="/usr/share/backgrounds/"
+wallpaper_dir="$HOME/.config/wallpapers/"
 
 random_dir=$(find "$wallpaper_dir" -type d | shuf -n 1)
 
