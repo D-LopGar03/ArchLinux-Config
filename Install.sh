@@ -12,6 +12,14 @@ configure(){
   cp -r * "$HOME/.config/" 
 }
 
+copy_fonts(){
+  sudo mkdir -p "/usr/share/fonts/HackNerdFonts"
+  cd HackNerdFonts
+  sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Hack.zip
+  sudo unzip Hack.zip
+  sudo rm -r Hack.zip
+}
+
 install_pacman_packages(){
 
   # UPDATE PACMAN
@@ -19,7 +27,7 @@ install_pacman_packages(){
 
   # PACMAN PACKAGES
 
-  sudo pacman -S --needed git base-devel neovim nano rsync xclip virtualbox docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi swaylock brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh
+  sudo pacman -S --needed git base-devel neovim nano rsync xclip virtualbox docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi swaylock brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh unzip zip
 
   # PACMAN PACKAGES UNINSTALL
 
@@ -59,3 +67,10 @@ fi
 install_pacman_packages
 configure
 chsh_func
+copy_fonts
+
+echo "System will reboot in 5 seconds"
+sleep 5
+reboot
+
+
