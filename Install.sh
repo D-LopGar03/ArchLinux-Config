@@ -35,6 +35,13 @@ install_pacman_packages(){
 
 }
 
+
+init(){
+  waybar &
+  swww img "$HOME/.config/wallpapers/retro-gaming/pacman-vintage-arcade-4k-wallpapers.jpg"
+}
+
+
 chsh_func(){
   echo "Update your shell to /bin/zsh."
   chsh -s /bin/zsh $USER
@@ -68,6 +75,7 @@ install_pacman_packages
 configure
 chsh_func
 copy_fonts
+init
 
 echo "System will reboot in 5 seconds"
 sleep 5
