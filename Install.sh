@@ -28,7 +28,7 @@ install_pacman_packages(){
 
   # PACMAN PACKAGES
 
-  sudo pacman -S --needed git base-devel neovim nano rsync xclip virtualbox-host-modules-arch docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi swaylock brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh unzip zip
+  sudo pacman -S --needed git base-devel neovim nano rsync xclip virtualbox-host-modules-arch docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi swaylock brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh unzip zip ranger
 
   # PACMAN PACKAGES UNINSTALL
 
