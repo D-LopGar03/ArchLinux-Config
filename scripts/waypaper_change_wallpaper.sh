@@ -15,4 +15,3 @@ swww img "$wallpaper" --transition-duration=0 && wal -i "$wallpaper" && killall 
 
 sleep 5
 
-hyprctl reload
