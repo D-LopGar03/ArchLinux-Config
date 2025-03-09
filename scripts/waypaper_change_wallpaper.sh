@@ -11,6 +11,8 @@ wallpaper_dir="/usr/share/backgrounds/pixel-arts"
 wallpaper=$(find "$wallpaper_dir" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" \) | shuf -n 1)
 
 # Cambiar el fondo con Waypaper
-swww img "$wallpaper" && wal -i "$wallpaper" && killall waybar && waybar &
+swww img "$wallpaper" --transition-duration=0 && wal -i "$wallpaper" && killall waybar && waybar &
 
+sleep 5
 
+hyprctl reload
