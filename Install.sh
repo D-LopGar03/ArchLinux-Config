@@ -40,6 +40,9 @@ install_pacman_packages(){
 init(){
   waybar &
   swww img "$HOME/.config/wallpapers/retro-gaming/pacman-vintage-arcade-4k-wallpapers.jpg"
+  hyprctl reload
+  sudo systemctl enable --now iwd
+
 }
 
 
