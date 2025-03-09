@@ -5,7 +5,7 @@
 
 
 # Carpeta donde tienes tus fondos de pantalla
-wallpaper_dir="/usr/share/backgrounds/retro-gaming/"
+wallpaper_dir="/usr/share/backgrounds/pixel-arts"
 
 # Seleccionar un archivo de imagen aleatorio de la carpeta (incluye más extensiones)
 wallpaper=$(find "$wallpaper_dir" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.bmp" -o -iname "*.gif" -o -iname "*.webp" \) | shuf -n 1)
