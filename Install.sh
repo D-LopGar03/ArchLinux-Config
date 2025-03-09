@@ -2,7 +2,6 @@
 
 # Description: Install all packages and dependencies needed for this configuration
 
-
 configure(){
   if [ ! -d $HOME/.config ]; then
     mkdir -p "$HOME/.config/"
