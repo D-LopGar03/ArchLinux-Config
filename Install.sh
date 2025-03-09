@@ -18,7 +18,7 @@ copy_fonts(){
   sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Hack.zip
   sudo unzip Hack.zip
   sudo rm -r Hack.zip
-  sudo mv "*.ttf" "/usr/share/fonts/HackNerdFonts/"
+  sudo mv *.ttf "/usr/share/fonts/HackNerdFonts/"
 }
 
 install_pacman_packages(){
