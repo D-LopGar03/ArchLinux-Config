@@ -28,7 +28,7 @@ install_pacman_packages(){
 
   # PACMAN PACKAGES
 
-  sudo pacman -S --needed git base-devel neovim nano rsync xclip virtualbox docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi swaylock brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh unzip zip
+  sudo pacman -S --needed git base-devel neovim nano rsync xclip virtualbox-host-modules-arch docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi swaylock brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh unzip zip
 
   # PACMAN PACKAGES UNINSTALL
 
@@ -38,8 +38,10 @@ install_pacman_packages(){
 
 
 init(){
-  waybar &
+  chmod +x "$HOME/.config/scripts/*" 
   swww img "$HOME/.config/wallpapers/retro-gaming/pacman-vintage-arcade-4k-wallpapers.jpg"
+  wal -i "$HOME/.config/wallpapers/retro-gaming/pacman-vintage-arcade-4k-wallpapers.jpg" 
+  waybar &
   hyprctl reload
   sudo systemctl enable --now iwd
 
