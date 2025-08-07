@@ -23,15 +23,15 @@ copy_fonts(){
 install_pacman_packages(){
 
   # UPDATE PACMAN
-  sudo pacman -Syyu
+  sudo pacman -Syuu
 
   # PACMAN PACKAGES
 
-  sudo pacman -S --needed git base-devel neovim nano rsync xclip virtualbox-host-modules-arch docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi swaylock brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh unzip zip ranger lsd bat timeshift qalculate-gtk 
+  sudo pacman -S --noconfirm --needed git base-devel neovim rsync xclip virtualbox-host-modules-arch docker docker-compose openfortivpn swww nwg-look keepassxc obsidian rofi bpytop vivaldi brightnessctl waybar pavucontrol pipewire pipewire-pulse lftp python-pillow zsh unzip zip ranger lsd bat timeshift qalculate-gtk tlp network-manager-applet
 
   # PACMAN PACKAGES UNINSTALL
 
-  sudo pacman -R wofi vim
+  sudo pacman -R wofi vim nano 
 
 }
 
@@ -66,7 +66,7 @@ install_yay() {
   yay -Syuu --noconfirm
 
   # Install additional packages with yay
-  yay -S --noconfirm python-pywal16 visual-studio-code-bin
+  yay -S --noconfirm python-pywal16 visual-studio-code-bin swaylock-effectss
 }
 
 # If yay not exist in the system, install it

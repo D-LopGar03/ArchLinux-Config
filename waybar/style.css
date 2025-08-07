@@ -11,8 +11,6 @@
 
 window#waybar {
     background-color: rgb(0, 0, 0);
-    /*  border-bottom: 20px solid rgba(62, 105, 138, 0.5); */
-    /* color: #ffffff; */
     background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
@@ -20,26 +18,40 @@ window#waybar {
 
 }
 
+
+#cpu,
+#memory {
+
+    min-width: 75px;
+    background-color: @color1;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: @color1;
+    border-bottom: 1px solid @color15;
+    border-top: 1px solid @color15;
+    border-right: 1px solid @color15;
+    border-left: 1px solid @color15;
+    border-radius: 10px;
+    margin-right: 20px;
+    color: white;
+}
+
+#custom-wayves,
+#tray,
 #battery,
 #network,
 #pulseaudio,
-#clock,
-#cpu,
-#memory {
+#clock {
     padding-left: 10px;
     padding-right: 10px;
-
-
 }
 
-
-
-
 #custom-launcher {
+    min-width: 25px;
     font-size: 20px;
     color: rgb(0, 132, 255);
     padding-right: 10px;
-    padding-left: 4px;
+    padding-left: 10px;
     background-color: @color1;
     border-bottom: 1px solid @color15;
     border-top: 1px solid @color15;
@@ -50,22 +62,17 @@ window#waybar {
 
 }
 
-
-
 #custom-launcher:hover {
     color: @color5;
 }
 
-
-
-
+#custom-wayves,
+#tray,
 #network,
 #battery,
 #pulseaudio,
 #clock,
-#workspaces,
-#memory,
-#cpu {
+#workspaces {
     background-color: @color1;
     border-bottom: 1px solid @color15;
     border-top: 1px solid @color15;
@@ -91,10 +98,18 @@ window#waybar {
 
 }
 
+#custom-launcher:hover {
+    background-color: @color3;
+    color: black;
+}
+
+
+#custom-wayves:hover,
+#tray:hover,
 #network:hover,
 #battery:hover,
 #pulseaudio:hover,
-#custom-launcher:hover #clock:hover,
+#clock:hover,
 #memory:hover,
 #clock:hover,
 #cpu:hover {

@@ -30,6 +30,7 @@ monitor = eDP-1,1920x1080@60,0x0, 1
 monitor = HDMI-A-1,1360x768@60, auto, auto
 
 
+
 ###################
 ### MY PROGRAMS ###
 ###################
@@ -46,7 +47,6 @@ $sniff = wireshark
 $passManager = keepassxc
 $mdText = obsidian
 $screenLock = "$HOME/.config/scripts/./screen_lock.sh"
-$toggleMic = "$HOME/.config/scripts/./toggle-mic.sh"
 #################
 ### AUTOSTART ###
 #################
@@ -55,10 +55,9 @@ $toggleMic = "$HOME/.config/scripts/./toggle-mic.sh"
 # Or execute your favorite apps at launch like this:
 
 # exec-once = $terminal
-exec-once = nm-applet &
+# exec-once = nm-applet &
 exec-once = waybar 
 exec-once = swww-daemon
-exec-once = ~/.config/hypr/swayidle.sh
 
 
 #############################
@@ -113,7 +112,7 @@ decoration {
 
     # Change transparency of focused and unfocused windows
     active_opacity = 1.0
-    inactive_opacity = 0.7
+    inactive_opacity = 0.5
 
     shadow {
         enabled = true
@@ -250,17 +249,7 @@ bind = $mainMod, K, exec, $passManager
 bind = $mainMod, O, exec, $mdText
 bind = $mainMod SHIFT, L, exec , $screenLock
 bind = $mainMod, W, exec, $sniff
-bind = $mainMod SHIFT, S, exec, hyprshot -m region --output-folder ~/Pictures/Screenshots
-
-# Mic toggle
-
-bind = , F9, exec, $toggleMic 
-
-# Multimedia keybinds
-
-bind = , F10, exec, playerctl previous
-bind = , F11, exec, playerctl play-pause
-bind = , F12, exec, playerctl next
+bind = $mainMod SHIFT, S, exec, hyprshot -m region
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
@@ -292,31 +281,25 @@ bind = $mainMod SHIFT, 8, movetoworkspace, 8
 bind = $mainMod SHIFT, 9, movetoworkspace, 9
 bind = $mainMod SHIFT, 0, movetoworkspace, 10
   
-bind = $mainMod SHIFT, LEFT, resizeactive, -20 0
-bind = $mainMod SHIFT, RIGHT, resizeactive, 20 0
-bind = $mainMod SHIFT, UP, resizeactive, 0 -20
-bind = $mainMod SHIFT, DOWN, resizeactive, 0 20
 
-# Move left or right a window through same workspace or different workspaces
+# Playerctl control
 
-bind = SUPER SHIFT, LEFT, movewindow, l
-bind = SUPER SHIFT, RIGHT, movewindow, r
-bind = SUPER SHIFT, UP, movewindow, u
-bind = SUPER SHIFT, DOWN, movewindow, d
+bindel = , F10, exec, playerctl previous
+bindel = , F11, exec, playerctl play-pause
+bindel = , F12, exec, playerctl next
 
-# Move through workspaces one by one
+# Audio input
 
-bind = SUPER, left, workspace, e-1
-bind = SUPER, right, workspace, e+1
+#bindel = , F9, exec, wpctl set-mute 72 toggle
 
 
 # Example special workspace (scratchpad)
 bind = $mainMod, S, togglespecialworkspace, magic
-bind = $mainMod SHIFT, S, movetoworkspace, special:magic
+bind = $mainMod SHIFT, P, movetoworkspace, special:magic
 
-# Scroll through existing workspaces with mainMod + scroll
-bind = $mainMod, mouse_down, workspace, e+1
-bind = $mainMod, mouse_up, workspace, e-1
+# Move through existing workspaces with mainMod + scroll
+bind = SUPER, right , workspace, e+1
+bind = SUPER, left, workspace, e-1
 
 # Move/resize windows with mainMod + LMB/RMB and dragging
 bindm = $mainMod, mouse:272, movewindow

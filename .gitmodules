@@ -1,0 +1,3 @@
+[submodule "scripts/wayves"]
+	path = scripts/wayves
+	url = https://github.com/jvc84/wayves

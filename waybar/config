@@ -4,20 +4,21 @@
     "margin-top": 0,
     "margin-left": 60,
     "margin-right": 60,
-    "modules-left": [
-        "custom/launcher",
+    "modules-right": [
+        "custom/wayves",
         "memory",
-        "cpu"
+        "cpu",
+        "custom/launcher"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
-    "modules-right": [
-        "tray",
-        "network",        
-        "pulseaudio",
+    "modules-left": [
+        "clock",
         "battery",
-        "clock"
+        "network",
+        "tray",
+        "pulseaudio"
     ],
     "custom/launcher": {
         "format": "",
@@ -60,11 +61,40 @@
             "<span color='#9ece6a'> </span>"
         ]
     },
-    "clock": {
+    "custom/wayves": {
+        "format": "{}",
+        "exec": "python /home/ay4t0/.config/scripts/wayves/wayves.py -o cava -i cava -a cava",
         "tooltip": true,
-        "interval": 60,
-        "format": "{:%H:%M}",
-        "tooltip-format": "{:%Y-%m-%d}"
+        "on-click": "playerctl previous",
+        "on-scroll-up": "playerctl pause",
+        "on-scroll-down": "playerctl play",
+        "on-click-right": "playerctl next"
+    },
+    "clock": {
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
     "pulseaudio": {
         "format": "{icon}   {volume}% ",
