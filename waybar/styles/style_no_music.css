@@ -45,27 +45,11 @@ window#waybar {
 /*Custom wayves*/
 
 #custom-wayves {
-    background: linear-gradient(270deg, @color2, @color4, @color6, @color8, @color10, @color12, @color14);
-    background-size: 800% 800%;
-    animation: rgbShift 10s ease infinite;
-    color: black;
-    padding: 0 10px;
-    border-radius: 20px;
+    background: none;
+    background-color: transparent;
+    animation: none;
+    color: white;
     margin-right: 20px;
-}
-
-@keyframes rgbShift {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 #custom-notification,
